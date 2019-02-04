@@ -8,17 +8,7 @@ import { element } from 'protractor';
 })
 export class ServersComponent implements OnInit {
 
-  // display(name: HTMLInputElement) {
-  //   console.log(name.value);
-  // }
-  name = '';
 
-  @ViewChild('serverName') serverName: ElementRef;
-
-  display() {
-    console.log(this.serverName.nativeElement.value);
-    this.name = this.serverName.nativeElement.value;
-  }
 
   constructor() { }
 
