@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input, ViewChild, ElementRef } from '@angular/core';
 import { element } from 'protractor';
 
 @Component({
@@ -8,9 +8,18 @@ import { element } from 'protractor';
 })
 export class ServersComponent implements OnInit {
 
-  display(name: HTMLInputElement) {
-    console.log(name.value);
+  // display(name: HTMLInputElement) {
+  //   console.log(name.value);
+  // }
+  name = '';
+
+  @ViewChild('serverName') serverName: ElementRef;
+
+  display() {
+    console.log(this.serverName.nativeElement.value);
+    this.name = this.serverName.nativeElement.value;
   }
+
   constructor() { }
 
   ngOnInit() {
