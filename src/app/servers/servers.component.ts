@@ -1,4 +1,5 @@
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
+import { element } from 'protractor';
 
 @Component({
   selector: 'app-servers',
@@ -7,16 +8,13 @@ import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 })
 export class ServersComponent implements OnInit {
 
-  @Input() confirm1: string;
-  @Output() childEvent = new EventEmitter();
-  name = '';
+  display(name: HTMLInputElement) {
+    console.log(name.value);
+  }
   constructor() { }
 
   ngOnInit() {
   }
 
-  onInput() {
-    this.childEvent.emit(this.name);
-  }
 
 }

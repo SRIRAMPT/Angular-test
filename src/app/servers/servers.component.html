@@ -1,4 +1,4 @@
 <!-- <h1 class="app-server"></h1> -->
-<input type="text" [(ngModel)]="name">
-<button (click)="onInput()">Click</button>
-<p>{{ confirm1 }}</p>
+<input type="text" #serverName>
+<button (click)="display(serverName)">Display</button>
+<p>{{serverName.value}}</p>
