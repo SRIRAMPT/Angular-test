@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+// import { GetService } from './newService.service';
 
 @Component({
   selector: 'app-root',
@@ -8,15 +9,4 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'angular-app';
   name = 'sriram';
-  evenNum = [] ;
-  oddNum = [] ;
-
-
-  printMessage(num) {
-    if (num % 2 === 0) {
-      this.evenNum.push(num);
-    } else {
-      this.oddNum.push(num);
-    }
-  }
 }

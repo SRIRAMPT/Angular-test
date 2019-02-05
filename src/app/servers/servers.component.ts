@@ -1,5 +1,6 @@
-import { Component, OnInit, Output, EventEmitter, Input, ViewChild, ElementRef } from '@angular/core';
-import { element } from 'protractor';
+import { Component, OnInit} from '@angular/core';
+import { GetService } from '../newService.service';
+
 
 @Component({
   selector: 'app-servers',
@@ -8,9 +9,15 @@ import { element } from 'protractor';
 })
 export class ServersComponent implements OnInit {
 
+  name: string;
 
+  constructor(private getService: GetService) {
+    console.log('working');
+    this.getService.newEvent.subscribe((data) => {
+      this.name = data;
+    });
+  }
 
-  constructor() { }
 
   ngOnInit() {
   }
