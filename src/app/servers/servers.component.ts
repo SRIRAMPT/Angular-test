@@ -1,6 +1,5 @@
-import { Component, OnInit} from '@angular/core';
-import { GetService } from '../newService.service';
-
+import { Component, OnInit } from '@angular/core';
+import { ServersService } from './servers.service';
 
 @Component({
   selector: 'app-servers',
@@ -8,19 +7,12 @@ import { GetService } from '../newService.service';
   styleUrls: ['./servers.component.css']
 })
 export class ServersComponent implements OnInit {
+  private servers: {id: number, name: string, status: string}[] = [];
 
-  name: string;
-
-  constructor(private getService: GetService) {
-    console.log('working');
-    this.getService.newEvent.subscribe((data) => {
-      this.name = data;
-    });
-  }
-
+  constructor(private serversService: ServersService) { }
 
   ngOnInit() {
+    this.servers = this.serversService.getServers();
   }
-
 
 }
